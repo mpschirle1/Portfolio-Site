@@ -1,0 +1,304 @@
+/*
+Colors used
+
+Text Color (Light Gray): #ccc;
+Primary Color (Green): #9c6;
+Secondary Color (Purple): #669;
+tertiary Color (Dark Green): #4d8070;
+*/
+
+:root {
+  --primary-color: #9c6;
+  --secondary-color: #669;
+  --tertiary-color: #4d8070;
+  --dark-grey: #333;
+  --text-color: #ccc;
+  --button-text: #fff;
+  --header-font: 'Halant', serif;
+  --body-font: 'Nunito Sans', sans-serif;
+  --standard-font: 400;
+  --bold-font: 700;
+}
+
+body {
+  background-color: var(--dark-grey);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-weight: var(standard-font);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1 {
+  font-family: var(--header-font);
+  font-size: 30px;
+  font-weight: var(bold-font);
+  text-align: center;
+}
+
+h2 {
+  font-family: var(--header-font);
+  font-size: 24px;
+  font-weight: var(bold-font);
+}
+
+h3 {
+  font-family: var(--header-font);
+  font-size: 18px;
+  font-weight: var(bold-font);
+}
+
+a {
+  color: var(--primary-color);
+}
+
+a:visited {
+  color: #6cc;
+}
+
+a:hover, a:focus { /* a:focus selected with keyboard */
+  text-decoration: none;
+  /* No underlining when hovering over a link */
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+a:active {
+  color: #c96;
+}
+
+button, .button {
+  border: none;
+  /* overwrites browser defaults and resets the border */
+  display: inline-block;
+  font-family: inherit;
+  /* takes the font from the outer container */
+  background-color: var(--primary-color);
+  color: var(--button-text) !important;
+  text-decoration: none;
+  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+  padding: 10px;
+  border-radius: 3px;
+  /*adds spacing to the button */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+  transition: 0.2s opacity;
+}
+
+button:hover, button:focus, .button:hover, .button:focus {
+  cursor: pointer;
+  /* Lets the mouse appear as a hand when hovering over the button */
+  opacity: 0.8;
+  /* Reduces the opacity of the button to 80% */
+}
+
+.button_secondary {
+  background-color: var(--secondary-color);
+  color: var(--button-text) !important;
+}
+
+.navigation-list__item--active {
+  text-decoration: none;
+  color: var(--primary-color) !important;
+  font-weight: var(--bold-font);
+}
+
+input[type=submit] {
+  border: none;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: var(--button-text);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+input[type=submit]:hover, input[type=submit]:focus {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.2s opacity;
+}
+
+table {
+  padding: 20px;
+  border-spacing: 10px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+thead {
+  font-family: var(--header-font);
+  font-size: 16px;
+  font-weight: var(bold-font)
+}
+
+.profile__logo {
+  width: 160px;
+  height: 88px;
+  margin: 10px;
+}
+
+.profile__portrait {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%; /* Rounds each edge to 50% of original width/height */
+}
+
+.page-footer {
+  clear: both; /* Clears all floats, both right and left */
+}
+
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+* { /* 'Universal selector' applies syling to all HTML elements */
+  box-sizing: border-box;
+  /* Sets default width of elements to include the padding and border */
+}
+
+.page-header {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  border-bottom: 2px solid;
+}
+
+.page-header__item {
+  flex: 0 1 200px; /* flex-grow, flex-shrink, flex-basis */
+}
+
+.page-header__item:last-child { /* last-child targets the last child of the two flexbox child items, in this case navigation */
+  flex-grow: 1;
+  text-align: right;
+}
+
+.navigation-list {
+  list-style-type: none; /* Removes bullet points */
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center; /* Can center any inline and inline-block elements */
+}
+
+/* start grid fallback (older browser support) must go before grid */
+.grid__item {
+  display: inline-block;
+  width: 33%;
+}
+/* end grid fallback */
+
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* fr = fraction */
+    grid-gap: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .grid__item {
+    background-color: var(--tertiary-color);
+    width: auto;
+    min-height: auto;
+    margin: auto;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item: last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+
+@keyframes color-change {
+  0% {
+    fill: #473b76;
+  }
+  50% {
+    fill: #366;
+  }
+  100% {
+    fill: #23a06b;
+  }
+}
+
+.b {
+  animation: 7s color-change infinite alternate linear;
+}
+
+@keyframes name-move {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(125px, 50px);
+  }
+}
+
+.d {
+  animation: 20s name-move infinite alternate linear;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+input[type=text], input[type=tel], input[type=email], textarea {
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 5px;
+  border: 1px solid var(--text-color);
+  resize: vertical;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+label {
+  padding: 12px 12px 12px 0px;
+  float: left;
+}
+
+::placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
