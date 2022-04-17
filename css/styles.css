@@ -251,6 +251,9 @@ thead {
   h1 {
     font-size: 22px;
   }
+  .profile__portrait {
+    width: 150px;
+  }
 }
 
 @keyframes color-change {

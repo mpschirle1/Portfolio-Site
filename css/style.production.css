@@ -283,6 +283,9 @@ thead {
   h1 {
     font-size: 22px;
   }
+  .profile__portrait {
+    width: 150px;
+  }
 }
 
 @-webkit-keyframes color-change {
