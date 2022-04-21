@@ -56,9 +56,9 @@ a:visited {
   color: #6cc;
 }
 
-a:hover, a:focus { /* a:focus selected with keyboard */
-  text-decoration: none;
-  /* No underlining when hovering over a link */
+a:hover,
+a:focus { /* a:focus selected with keyboard */
+  text-decoration: none; /* No underlining when hovering over a link */
   opacity: 0.8;
   transition: 0.2s;
 }
@@ -67,29 +67,26 @@ a:active {
   color: #c96;
 }
 
-button, .button {
-  border: none;
-  /* overwrites browser defaults and resets the border */
+button,
+.button {
+  border: none; /* overwrites browser defaults and resets the border */
   display: inline-block;
-  font-family: inherit;
-  /* takes the font from the outer container */
+  font-family: inherit; /* takes the font from the outer container */
   background-color: var(--primary-color);
   color: var(--button-text) !important;
-  text-decoration: none;
-  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+  text-decoration: none; /* styles the background color, font color, and text decoration (underline, etc.) of the button */
   padding: 10px;
-  border-radius: 3px;
-  /*adds spacing to the button */
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+  border-radius: 3px; /* adds spacing to the button */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3); /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
   transition: 0.2s opacity;
 }
 
-button:hover, button:focus, .button:hover, .button:focus {
-  cursor: pointer;
-  /* Lets the mouse appear as a hand when hovering over the button */
-  opacity: 0.8;
-  /* Reduces the opacity of the button to 80% */
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  cursor: pointer; /* Lets the mouse appear as a hand when hovering over the button */
+  opacity: 0.8; /* Reduces the opacity of the button to 80% */
 }
 
 .button_secondary {
@@ -114,7 +111,8 @@ input[type=submit] {
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 }
 
-input[type=submit]:hover, input[type=submit]:focus {
+input[type=submit]:hover,
+input[type=submit]:focus {
   cursor: pointer;
   opacity: 0.8;
   transition: 0.2s opacity;
@@ -130,7 +128,7 @@ table {
 thead {
   font-family: var(--header-font);
   font-size: 16px;
-  font-weight: var(bold-font)
+  font-weight: var(bold-font);
 }
 
 .profile__logo {
@@ -169,8 +167,7 @@ thead {
 }
 
 * { /* 'Universal selector' applies syling to all HTML elements */
-  box-sizing: border-box;
-  /* Sets default width of elements to include the padding and border */
+  box-sizing: border-box; /* Sets default width of elements to include the padding and border */
 }
 
 .page-header {
@@ -210,6 +207,7 @@ thead {
   display: inline-block;
   width: 33%;
 }
+
 /* end grid fallback */
 
 @supports (display: grid) {
@@ -245,13 +243,16 @@ thead {
   .grid {
     grid-gap: 10px;
   }
+
   .grid__item: last-child {
     grid-column: auto / auto;
     grid-row: auto / auto;
   }
+
   h1 {
     font-size: 22px;
   }
+
   .profile__portrait {
     width: 150px;
   }
@@ -261,9 +262,11 @@ thead {
   0% {
     fill: #473b76;
   }
+
   50% {
     fill: #366;
   }
+
   100% {
     fill: #23a06b;
   }
@@ -277,6 +280,7 @@ thead {
   from {
     transform: translate(0, 50px);
   }
+
   to {
     transform: translate(125px, 50px);
   }
@@ -292,7 +296,10 @@ thead {
   text-align: center;
 }
 
-input[type=text], input[type=tel], input[type=email], textarea {
+input[type=text],
+input[type=tel],
+input[type=email],
+textarea {
   border-radius: 4px;
   background-color: var(--secondary-color);
   color: var(--text-color);
@@ -304,7 +311,7 @@ input[type=text], input[type=tel], input[type=email], textarea {
 }
 
 label {
-  padding: 12px 12px 12px 0px;
+  padding: 12px 12px 12px 0;
   float: left;
 }
 
