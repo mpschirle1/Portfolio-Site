@@ -1,8 +1,8 @@
 /*
 * Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.12,
-* Autoprefixer: v10.4.4
-* Browsers: last 2 version
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
 */
 
 /*
@@ -14,36 +14,49 @@ Secondary Color (Purple): #669;
 tertiary Color (Dark Green): #4d8070;
 */
 
+:root {
+  --primary-color: #9c6;
+  --secondary-color: #669;
+  --tertiary-color: #4d8070;
+  --dark-grey: #333;
+  --text-color: #ccc;
+  --button-text: #fff;
+  --header-font: "Halant", serif;
+  --body-font: "Nunito Sans", sans-serif;
+  --standard-font: 400;
+  --bold-font: 700;
+}
+
 body {
-  background-color: #333;
-  color: #ccc;
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: undefined;
+  background-color: var(--dark-grey);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-weight: var(standard-font);
   font-size: 16px;
   line-height: 1.6;
 }
 
 h1 {
-  font-family: 'Halant', serif;
+  font-family: var(--header-font);
   font-size: 30px;
-  font-weight: undefined;
+  font-weight: var(bold-font);
   text-align: center;
 }
 
 h2 {
-  font-family: 'Halant', serif;
+  font-family: var(--header-font);
   font-size: 24px;
-  font-weight: undefined;
+  font-weight: var(bold-font);
 }
 
 h3 {
-  font-family: 'Halant', serif;
+  font-family: var(--header-font);
   font-size: 18px;
-  font-weight: undefined;
+  font-weight: var(bold-font);
 }
 
 a {
-  color: #9c6;
+  color: var(--primary-color);
 }
 
 a:visited {
@@ -51,10 +64,12 @@ a:visited {
 }
 
 a:hover,
-a:focus { /* a:focus selected with keyboard */
+a:focus {
+  /* a:focus selected with keyboard */
   text-decoration: none; /* No underlining when hovering over a link */
   opacity: 0.8;
   -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
 }
 
@@ -62,31 +77,19 @@ a:active {
   color: #c96;
 }
 
-button {
-  border: none; /* overwrites browser defaults and resets the border */
-  display: inline-block;
-  font-family: inherit; /* takes the font from the outer container */
-  background-color: #9c6;
-  color: #fff !important;
-  text-decoration: none; /* styles the background color, font color, and text decoration (underline, etc.) of the button */
-  padding: 10px;
-  border-radius: 3px; /* adds spacing to the button */
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3); /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
-  -webkit-transition: 0.2s opacity;
-  transition: 0.2s opacity;
-}
-
+button,
 .button {
   border: none; /* overwrites browser defaults and resets the border */
   display: inline-block;
   font-family: inherit; /* takes the font from the outer container */
-  background-color: #9c6;
-  color: #fff !important;
+  background-color: var(--primary-color);
+  color: var(--button-text) !important;
   text-decoration: none; /* styles the background color, font color, and text decoration (underline, etc.) of the button */
   padding: 10px;
   border-radius: 3px; /* adds spacing to the button */
   border-bottom: 2px solid rgba(0, 0, 0, 0.3); /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
   -webkit-transition: 0.2s opacity;
+  -o-transition: 0.2s opacity;
   transition: 0.2s opacity;
 }
 
@@ -99,32 +102,33 @@ button:focus,
 }
 
 .button_secondary {
-  background-color: #669;
-  color: #fff !important;
+  background-color: var(--secondary-color);
+  color: var(--button-text) !important;
 }
 
 .navigation-list__item--active {
   text-decoration: none;
-  color: #9c6 !important;
-  font-weight: 700;
+  color: var(--primary-color) !important;
+  font-weight: var(--bold-font);
 }
 
-input[type=submit] {
+input[type="submit"] {
   border: none;
   font-family: inherit;
-  background-color: #9c6;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--button-text);
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 }
 
-input[type=submit]:hover,
-input[type=submit]:focus {
+input[type="submit"]:hover,
+input[type="submit"]:focus {
   cursor: pointer;
   opacity: 0.8;
   -webkit-transition: 0.2s opacity;
+  -o-transition: 0.2s opacity;
   transition: 0.2s opacity;
 }
 
@@ -136,9 +140,9 @@ table {
 }
 
 thead {
-  font-family: 'Halant', serif;
+  font-family: var(--header-font);
   font-size: 16px;
-  font-weight: undefined;
+  font-weight: var(bold-font);
 }
 
 .profile__logo {
@@ -155,6 +159,10 @@ thead {
   width: 250px;
   margin-right: 40px;
   border-radius: 50%; /* Rounds each edge to 50% of original width/height */
+}
+
+.screenshot {
+  width: 95%;
 }
 
 .page-footer {
@@ -178,7 +186,8 @@ thead {
   text-align: center;
 }
 
-* { /* 'Universal selector' applies syling to all HTML elements */
+* {
+  /* 'Universal selector' applies syling to all HTML elements */
   -webkit-box-sizing: border-box;
   box-sizing: border-box; /* Sets default width of elements to include the padding and border */
 }
@@ -198,7 +207,8 @@ thead {
   flex: 0 1 200px; /* flex-grow, flex-shrink, flex-basis */
 }
 
-.page-header__item:last-child { /* last-child targets the last child of the two flexbox child items, in this case navigation */
+.page-header__item:last-child {
+  /* last-child targets the last child of the two flexbox child items, in this case navigation */
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
@@ -230,6 +240,7 @@ thead {
 .grid__item {
   display: inline-block;
   width: 33%;
+  padding: 5%;
 }
 
 /* end grid fallback */
@@ -246,10 +257,9 @@ thead {
   }
 
   .grid__item {
-    background-color: #4d8070;
+    background-color: var(--tertiary-color);
     width: auto;
     min-height: auto;
-    margin: auto;
   }
 }
 
@@ -272,7 +282,7 @@ thead {
     grid-gap: 10px;
   }
 
-  .grid__item: last-child {
+  .grid__item:last-child {
     grid-column: auto / auto;
     grid-row: auto / auto;
   }
@@ -354,45 +364,15 @@ thead {
   text-align: center;
 }
 
-input[type=text] {
-  border-radius: 4px;
-  background-color: #669;
-  color: #ccc;
-  padding: 5px;
-  border: 1px solid #ccc;
-  resize: vertical;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-input[type=tel] {
-  border-radius: 4px;
-  background-color: #669;
-  color: #ccc;
-  padding: 5px;
-  border: 1px solid #ccc;
-  resize: vertical;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-input[type=email] {
-  border-radius: 4px;
-  background-color: #669;
-  color: #ccc;
-  padding: 5px;
-  border: 1px solid #ccc;
-  resize: vertical;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
+input[type="text"],
+input[type="tel"],
+input[type="email"],
 textarea {
   border-radius: 4px;
-  background-color: #669;
-  color: #ccc;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
   padding: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--text-color);
   resize: vertical;
   width: 100%;
   margin-bottom: 10px;

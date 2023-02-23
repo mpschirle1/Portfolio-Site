@@ -14,8 +14,8 @@ tertiary Color (Dark Green): #4d8070;
   --dark-grey: #333;
   --text-color: #ccc;
   --button-text: #fff;
-  --header-font: 'Halant', serif;
-  --body-font: 'Nunito Sans', sans-serif;
+  --header-font: "Halant", serif;
+  --body-font: "Nunito Sans", sans-serif;
   --standard-font: 400;
   --bold-font: 700;
 }
@@ -57,7 +57,8 @@ a:visited {
 }
 
 a:hover,
-a:focus { /* a:focus selected with keyboard */
+a:focus {
+  /* a:focus selected with keyboard */
   text-decoration: none; /* No underlining when hovering over a link */
   opacity: 0.8;
   transition: 0.2s;
@@ -100,7 +101,7 @@ button:focus,
   font-weight: var(--bold-font);
 }
 
-input[type=submit] {
+input[type="submit"] {
   border: none;
   font-family: inherit;
   background-color: var(--primary-color);
@@ -111,8 +112,8 @@ input[type=submit] {
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 }
 
-input[type=submit]:hover,
-input[type=submit]:focus {
+input[type="submit"]:hover,
+input[type="submit"]:focus {
   cursor: pointer;
   opacity: 0.8;
   transition: 0.2s opacity;
@@ -145,6 +146,10 @@ thead {
   border-radius: 50%; /* Rounds each edge to 50% of original width/height */
 }
 
+.screenshot {
+  width: 95%;
+}
+
 .page-footer {
   clear: both; /* Clears all floats, both right and left */
 }
@@ -166,7 +171,8 @@ thead {
   text-align: center;
 }
 
-* { /* 'Universal selector' applies syling to all HTML elements */
+* {
+  /* 'Universal selector' applies syling to all HTML elements */
   box-sizing: border-box; /* Sets default width of elements to include the padding and border */
 }
 
@@ -181,7 +187,8 @@ thead {
   flex: 0 1 200px; /* flex-grow, flex-shrink, flex-basis */
 }
 
-.page-header__item:last-child { /* last-child targets the last child of the two flexbox child items, in this case navigation */
+.page-header__item:last-child {
+  /* last-child targets the last child of the two flexbox child items, in this case navigation */
   flex-grow: 1;
   text-align: right;
 }
@@ -206,6 +213,7 @@ thead {
 .grid__item {
   display: inline-block;
   width: 33%;
+  padding: 5%;
 }
 
 /* end grid fallback */
@@ -223,7 +231,6 @@ thead {
     background-color: var(--tertiary-color);
     width: auto;
     min-height: auto;
-    margin: auto;
   }
 }
 
@@ -244,7 +251,7 @@ thead {
     grid-gap: 10px;
   }
 
-  .grid__item: last-child {
+  .grid__item:last-child {
     grid-column: auto / auto;
     grid-row: auto / auto;
   }
@@ -296,9 +303,9 @@ thead {
   text-align: center;
 }
 
-input[type=text],
-input[type=tel],
-input[type=email],
+input[type="text"],
+input[type="tel"],
+input[type="email"],
 textarea {
   border-radius: 4px;
   background-color: var(--secondary-color);
