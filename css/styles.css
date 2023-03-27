@@ -7,6 +7,9 @@ Secondary Color (Purple): #669;
 tertiary Color (Dark Green): #4d8070;
 */
 
+@import url("https://use.typekit.net/nxv8pvc.css");
+@import url("https://use.typekit.net/nxv8pvc.css");
+
 :root {
   --primary-color: #9c6;
   --secondary-color: #669;
@@ -14,38 +17,58 @@ tertiary Color (Dark Green): #4d8070;
   --dark-grey: #333;
   --text-color: #ccc;
   --button-text: #fff;
-  --header-font: "Halant", serif;
-  --body-font: "Nunito Sans", sans-serif;
+  --header-font: "clarendon-wide-sketch", sans-serif;
+  --body-font: "freight-sans-pro", sans-serif;
   --standard-font: 400;
-  --bold-font: 700;
+  --bold-font: 400;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
 }
 
 body {
   background-color: var(--dark-grey);
+  background-size: cover;
   color: var(--text-color);
   font-family: var(--body-font);
   font-weight: var(standard-font);
   font-size: 16px;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  flex: auto;
 }
 
 h1 {
   font-family: var(--header-font);
   font-size: 30px;
-  font-weight: var(bold-font);
+  font-weight: 200;
   text-align: center;
+  font-style: normal;
+  filter: drop-shadow(1px 2px 3px black);
 }
 
 h2 {
   font-family: var(--header-font);
   font-size: 24px;
-  font-weight: var(bold-font);
+  font-weight: 200;
+  filter: drop-shadow(1px 2px 3px black);
 }
 
 h3 {
   font-family: var(--header-font);
   font-size: 18px;
-  font-weight: var(bold-font);
+  font-weight: 200;
+  filter: drop-shadow(1px 2px 3px black);
 }
 
 a {
@@ -53,15 +76,13 @@ a {
 }
 
 a:visited {
-  color: #6cc;
+  color: var(--primary-color);
 }
 
 a:hover,
 a:focus {
   /* a:focus selected with keyboard */
   text-decoration: none; /* No underlining when hovering over a link */
-  opacity: 0.8;
-  transition: 0.2s;
 }
 
 a:active {
@@ -77,7 +98,7 @@ button,
   color: var(--button-text) !important;
   text-decoration: none; /* styles the background color, font color, and text decoration (underline, etc.) of the button */
   padding: 10px;
-  border-radius: 3px; /* adds spacing to the button */
+  border-radius: 5px; /* adds spacing to the button */
   border-bottom: 2px solid rgba(0, 0, 0, 0.3); /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
   transition: 0.2s opacity;
 }
@@ -96,9 +117,10 @@ button:focus,
 }
 
 .navigation-list__item--active {
-  text-decoration: none;
+  text-decoration: underline overline !important;
+  text-underline-offset: 0.4em;
   color: var(--primary-color) !important;
-  font-weight: var(--bold-font);
+  font-weight: 700;
 }
 
 input[type="submit"] {
@@ -124,50 +146,71 @@ table {
   border-spacing: 10px;
   text-align: center;
   margin: 0 auto;
+  width: 50vw;
 }
 
 thead {
   font-family: var(--header-font);
   font-size: 16px;
-  font-weight: var(bold-font);
+  font-weight: 200;
+}
+
+.background {
+  background-color: var(--dark-grey);
+  background-image: url("https://rare-gallery.com/uploads/posts/5404483-code-screen-programming-design-web-internet-html-coding-color-type-colour-language-source-code-www-website-webdesigner-unstock-software-engineer-software-script-png-images.jpg");
+  background-blend-mode: soft-light;
+  background-size: cover;
 }
 
 .profile__logo {
-  width: 160px;
-  height: 88px;
-  margin: 10px;
-  flex: 0 1 200px;
+  width: 80px;
+  height: 44px;
+  margin: auto;
 }
 
 .profile__portrait {
   float: left;
-  width: 250px;
   margin-right: 40px;
   border-radius: 50%; /* Rounds each edge to 50% of original width/height */
+  outline: solid var(--text-color);
+  filter: drop-shadow(4px 0px 10px black);
+}
+
+.greeting {
+  text-align: left;
+}
+
+.greeting-message {
+  margin: 0 5% 3% 0;
 }
 
 .screenshot {
   width: 95%;
-}
-
-.page-footer {
-  clear: both; /* Clears all floats, both right and left */
+  margin: 2% 0;
+  filter: drop-shadow(4px 4px 4px black);
 }
 
 .profile {
-  max-width: 700px;
-  margin: 0 auto;
+  background-color: var(--dark-grey);
+  display: flex;
+  flex-direction: row;
+  margin: 35vh auto 35vh 25vw;
+  border: solid;
+  height: 250px;
+  border-radius: 250px 0 0 250px;
+  border-right: none;
+  filter: drop-shadow(2px 4px 10px black);
 }
 
 .about {
   max-width: 700px;
-  margin: 0 auto;
+  margin: 110px auto 0 auto;
   text-align: center;
 }
 
 .work {
   max-width: 700px;
-  margin: 0 auto;
+  margin: 110px auto 0 auto;
   text-align: center;
 }
 
@@ -179,8 +222,14 @@ thead {
 .page-header {
   display: flex;
   width: 100%;
-  padding: 20px;
+  padding: 10px 20px;
   border-bottom: 2px solid;
+  background: #232323;
+  filter: drop-shadow(2px 4px 10px black);
+  flex: none;
+  opacity: 0.98;
+  position: fixed;
+  z-index: 2;
 }
 
 .page-header__item {
@@ -198,15 +247,45 @@ thead {
 }
 
 .navigation-list li {
+  margin-top: 0.5vh;
   display: inline-block;
-  margin-left: 15px;
+  margin-left: 1em;
+  font-family: var(--header-font);
+  font-size: large;
+}
+
+.navigation-list a {
+  text-decoration: none;
+}
+
+.navigation-list a:hover {
+  text-decoration: underline overline;
+  text-underline-offset: 0.4em;
 }
 
 .page-footer {
+  background: #232323;
   clear: both;
   display: flex;
   flex-direction: column;
   text-align: center; /* Can center any inline and inline-block elements */
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 2px solid;
+  filter: drop-shadow(-2px -4px 10px black);
+  flex: none;
+  opacity: 0.98;
+}
+
+.footer-text {
+  margin: 0.5% 0 0 0;
+}
+
+.copyright {
+  margin: 0 0 1% 0;
+  font-size: 0.75em;
 }
 
 /* start grid fallback (older browser support) must go before grid */
@@ -218,6 +297,10 @@ thead {
 
 /* end grid fallback */
 
+.project-title {
+  margin-top: 0;
+}
+
 @supports (display: grid) {
   .grid {
     display: grid;
@@ -225,18 +308,61 @@ thead {
     grid-gap: 20px;
     padding: 20px;
     text-align: center;
+    margin-bottom: 110px;
   }
 
   .grid__item {
-    background-color: var(--tertiary-color);
+    font-size: 0.9em;
+    background-color: var(--secondary-color);
     width: auto;
     min-height: auto;
+    border-radius: 5px;
+    filter: drop-shadow(5px 5px 5px black);
+    background-image: url("https://images.unsplash.com/photo-1521459467264-802e2ef3141f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80");
+    background-size: cover;
+    background-blend-mode: multiply;
+  }
+}
+
+@media all and (max-width: 350px) {
+  .navigation-list {
+    padding: 0;
+    text-align: center;
+  }
+  .navigation-list li {
+    font-size: 0.7em;
+  }
+  .profile__logo {
+    display: none;
   }
 }
 
 @media all and (max-width: 500px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+  .project-title {
+    font-size: medium;
+  }
+  .item-description,
+  .link-container {
+    font-size: small;
+  }
+  .navigation-list {
+    padding: 0;
+  }
+  .navigation-list li {
+    font-size: 0.7em;
+  }
+  form {
+    margin-bottom: 15vh;
+  }
+  .contact-card {
+    width: 85%;
+    font-size: small;
+  }
+  .contact-form {
+    width: 85%;
   }
 }
 
@@ -262,6 +388,7 @@ thead {
 
   .profile__portrait {
     width: 150px;
+    margin: 40px;
   }
 }
 
@@ -297,10 +424,35 @@ thead {
   animation: 20s name-move infinite alternate linear;
 }
 
-.contact-form {
-  max-width: 500px;
-  margin: 0 auto;
+.animated-logo {
+  width: 275px;
+  margin: 2%;
+}
+
+.contact {
+  max-width: 450px;
+  margin: 110px auto 0 auto;
   text-align: center;
+}
+
+.contact-card {
+  background-color: #232323;
+  padding: 3%;
+  margin: 5%;
+  border-radius: 5px;
+  filter: drop-shadow(3px 3px 8px black);
+}
+
+.contact-form {
+  background-color: #232323;
+  padding: 3% 7% 5% 7%;
+  margin: 5%;
+  border-radius: 5px;
+  filter: drop-shadow(3px 3px 8px black);
+}
+
+th {
+  font-weight: 200;
 }
 
 input[type="text"],
@@ -318,11 +470,78 @@ textarea {
 }
 
 label {
-  padding: 12px 12px 12px 0;
+  padding: 12px 12px 2px 0;
   float: left;
 }
 
 ::placeholder {
   color: inherit;
   opacity: 0.5;
+}
+
+.greeting-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.technologies {
+  display: inline-flex;
+  justify-content: space-evenly;
+  background: var(--dark-grey);
+  width: 95%;
+  margin: 2% auto;
+  padding: 3%;
+  filter: drop-shadow(4px 4px 4px black);
+}
+
+.technologies path {
+  fill: var(--text-color);
+}
+
+.technologies path:hover {
+  fill: var(--primary-color);
+}
+
+.social-media path {
+  fill: var(--text-color);
+}
+
+.social-media path:hover {
+  fill: var(--primary-color);
+  opacity: 1;
+}
+
+.item-description {
+  filter: drop-shadow(1px 1px 2px black);
+}
+
+.link-container {
+  background: var(--dark-grey);
+  width: 95%;
+  margin: auto;
+  margin: 2% auto 0 auto;
+  padding: 2%;
+  filter: drop-shadow(4px 4px 4px black);
+}
+
+.contact-type {
+  display: inline-flex;
+  align-items: center;
+  font-size: larger;
+  margin-bottom: 0.5em;
+}
+
+.contact-type a {
+  text-decoration: none;
+}
+
+.contact-type path {
+  fill: var(--text-color);
+}
+
+.contact-type-container {
+  display: grid;
+  width: fit-content;
+  margin: auto;
+  text-align: left;
 }
