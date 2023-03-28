@@ -14,6 +14,11 @@ form.addEventListener("submit", (event) => {
   });
   const requestOptions = {
     method: "POST",
+    mode: "no-cors",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
     body,
   };
 
