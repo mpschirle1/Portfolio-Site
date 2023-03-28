@@ -97,6 +97,7 @@ button,
   background-color: var(--primary-color);
   color: var(--button-text) !important;
   text-decoration: none; /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+  text-shadow: 1px 1px 4px black;
   padding: 10px;
   border-radius: 5px; /* adds spacing to the button */
   border-bottom: 2px solid rgba(0, 0, 0, 0.3); /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
@@ -176,11 +177,23 @@ thead {
   filter: drop-shadow(4px 0px 10px black);
 }
 
+.small-screens-pic {
+  display: none;
+}
+
 .greeting {
   text-align: left;
+  margin: 0;
+}
+
+.greeting-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .greeting-message {
+  font-size: smaller;
   margin: 0 5% 3% 0;
 }
 
@@ -325,6 +338,9 @@ thead {
 }
 
 @media all and (max-width: 350px) {
+  .page-header {
+    padding: 0px 20px;
+  }
   .navigation-list {
     padding: 0;
     text-align: center;
@@ -334,6 +350,40 @@ thead {
   }
   .profile__logo {
     display: none;
+  }
+  .profile {
+    margin: 35vh auto 35vh auto;
+    border-radius: 0;
+    border-left: none;
+  }
+  .greeting-container {
+    align-items: center;
+  }
+  .greeting-message {
+    margin: 0;
+    text-align: center;
+    font-size: smaller;
+    margin: 0 5%;
+  }
+  .profile__portrait {
+    display: none;
+  }
+  .small-pic-container {
+    display: flex;
+    justify-content: center;
+  }
+  .small-screens-pic {
+    display: flex;
+    position: absolute;
+    width: 150px;
+    margin: 14vh auto 0;
+    z-index: 1;
+    border-radius: 50%;
+    outline: solid var(--text-color);
+    filter: drop-shadow(4px 0px 10px black);
+  }
+  .animated-logo {
+    width: 90% !important;
   }
 }
 
@@ -348,6 +398,14 @@ thead {
   .link-container {
     font-size: small;
   }
+  .page-header {
+    padding: 0px 20px;
+  }
+  .about,
+  .work,
+  .contact {
+    margin-top: 85px !important;
+  }
   .navigation-list {
     padding: 0;
   }
@@ -358,11 +416,47 @@ thead {
     margin-bottom: 15vh;
   }
   .contact-card {
-    width: 85%;
     font-size: small;
   }
   .contact-form {
     width: 85%;
+  }
+  .profile {
+    justify-content: center;
+    margin: 35vh auto 35vh auto !important;
+    border-radius: 0;
+    border-left: none;
+  }
+  .greeting-message {
+    margin: 0;
+    text-align: center;
+    margin: 0 5%;
+  }
+  .greeting-container {
+    align-items: center;
+  }
+  .profile__portrait {
+    display: none;
+  }
+  .small-pic-container {
+    display: flex;
+    justify-content: center;
+  }
+  .small-screens-pic {
+    display: flex;
+    position: absolute;
+    width: 150px;
+    margin: 14vh auto 0;
+    z-index: 1;
+    border-radius: 50%;
+    outline: solid var(--text-color);
+    filter: drop-shadow(4px 0px 10px black);
+  }
+  .about-message {
+    font-size: smaller;
+  }
+  .animated-logo {
+    margin: 2% auto 15vh auto !important;
   }
 }
 
@@ -385,10 +479,25 @@ thead {
   h1 {
     font-size: 22px;
   }
+  .profile {
+    margin-left: 10vw;
+  }
+}
 
-  .profile__portrait {
-    width: 150px;
-    margin: 40px;
+@media all and (max-width: 800px) {
+  .about-message {
+    padding: 5%;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .profile {
+    margin-left: 50vw;
+  }
+  .greeting-message {
+    font-size: revert;
   }
 }
 
@@ -430,6 +539,9 @@ thead {
 }
 
 .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 450px;
   margin: 110px auto 0 auto;
   text-align: center;
@@ -437,6 +549,7 @@ thead {
 
 .contact-card {
   background-color: #232323;
+  width: 85%;
   padding: 3%;
   margin: 5%;
   border-radius: 5px;
@@ -477,11 +590,6 @@ label {
 ::placeholder {
   color: inherit;
   opacity: 0.5;
-}
-
-.greeting-container {
-  display: flex;
-  flex-direction: column;
 }
 
 .technologies {
