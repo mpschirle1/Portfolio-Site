@@ -5,10 +5,10 @@ form.addEventListener("submit", (event) => {
 
   const { email, telephone, message } = event.target;
   const endpoint =
-    "<https://94tlxle5bh.execute-api.us-west-1.amazonaws.com/default/sendContactEmail>";
+    "https://94tlxle5bh.execute-api.us-west-1.amazonaws.com/default/sendContactEmail";
 
   const body = JSON.stringify({
-    senderName: email.value,
+    senderEmail: email.value,
     senderTelephone: telephone.value,
     message: message.value,
   });
