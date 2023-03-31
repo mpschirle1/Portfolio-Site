@@ -218,6 +218,7 @@ thead {
 .animated-logo {
   width: 300px;
   height: 300px;
+  margin-right: 3%;
 }
 
 .about {
@@ -251,7 +252,7 @@ thead {
   flex: none;
   opacity: 0.98;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
 }
 
 .page-header__item {
