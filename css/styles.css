@@ -54,21 +54,21 @@ h1 {
   font-weight: 200;
   text-align: center;
   font-style: normal;
-  filter: drop-shadow(1px 2px 3px black);
+  filter: drop-shadow(1px 2px 3px #160d08);
 }
 
 h2 {
   font-family: var(--header-font);
   font-size: 24px;
   font-weight: 200;
-  filter: drop-shadow(1px 2px 3px black);
+  filter: drop-shadow(1px 2px 3px #160d08);
 }
 
 h3 {
   font-family: var(--header-font);
   font-size: 18px;
   font-weight: 200;
-  filter: drop-shadow(1px 2px 3px black);
+  filter: drop-shadow(1px 2px 3px #160d08);
 }
 
 a {
@@ -97,7 +97,7 @@ button,
   background-color: var(--primary-color);
   color: var(--button-text) !important;
   text-decoration: none; /* styles the background color, font color, and text decoration (underline, etc.) of the button */
-  text-shadow: 1px 1px 4px black;
+  text-shadow: 1px 1px 4px #160d08;
   padding: 10px;
   border-radius: 5px; /* adds spacing to the button */
   border-bottom: 2px solid rgba(0, 0, 0, 0.3); /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
@@ -174,7 +174,7 @@ thead {
   margin-right: 40px;
   border-radius: 50%; /* Rounds each edge to 50% of original width/height */
   outline: solid var(--text-color);
-  filter: drop-shadow(4px 0px 10px black);
+  filter: drop-shadow(4px 0px 10px #160d08);
 }
 
 .small-screens-pic {
@@ -200,7 +200,7 @@ thead {
 .screenshot {
   width: 95%;
   margin: 2% 0;
-  filter: drop-shadow(4px 4px 4px black);
+  filter: drop-shadow(4px 4px 4px #160d08);
 }
 
 .profile {
@@ -212,13 +212,22 @@ thead {
   height: 250px;
   border-radius: 250px 0 0 250px;
   border-right: none;
-  filter: drop-shadow(2px 4px 10px black);
+  filter: drop-shadow(2px 4px 10px #160d08);
+}
+
+.animated-logo {
+  width: 300px;
+  height: 300px;
 }
 
 .about {
   max-width: 700px;
   margin: 110px auto 0 auto;
   text-align: center;
+}
+
+.about-message {
+  margin-bottom: 4%;
 }
 
 .work {
@@ -238,7 +247,7 @@ thead {
   padding: 10px 20px;
   border-bottom: 2px solid;
   background: #232323;
-  filter: drop-shadow(2px 4px 10px black);
+  filter: drop-shadow(2px 4px 10px #160d08);
   flex: none;
   opacity: 0.98;
   position: fixed;
@@ -287,9 +296,10 @@ thead {
   right: 0;
   bottom: 0;
   border-top: 2px solid;
-  filter: drop-shadow(-2px -4px 10px black);
+  filter: drop-shadow(-2px -4px 10px #160d08);
   flex: none;
   opacity: 0.98;
+  z-index: 2;
 }
 
 .footer-text {
@@ -330,7 +340,7 @@ thead {
     width: auto;
     min-height: auto;
     border-radius: 5px;
-    filter: drop-shadow(5px 5px 5px black);
+    filter: drop-shadow(5px 5px 5px #160d08);
     background-image: url("https://images.unsplash.com/photo-1521459467264-802e2ef3141f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80");
     background-size: cover;
     background-blend-mode: multiply;
@@ -380,10 +390,33 @@ thead {
     z-index: 1;
     border-radius: 50%;
     outline: solid var(--text-color);
-    filter: drop-shadow(4px 0px 10px black);
+    filter: drop-shadow(4px 0px 10px #160d08);
+  }
+  .about-message {
+    margin-bottom: 4%;
+  }
+  button,
+  .button {
+    scale: 0.85;
   }
   .animated-logo {
-    width: 90% !important;
+    width: 150px;
+    height: 150px;
+    margin: 0 4% 100px 0;
+  }
+  .ticker-container {
+    margin: 4%;
+  }
+  .ticker-container div.slide {
+    scale: 0.9;
+  }
+
+  .ticker-container .ticker-tape {
+    width: auto !important;
+  }
+  .ticker-container .ticker-tape:before,
+  .ticker-container .ticker-tape:after {
+    width: 125px !important;
   }
 }
 
@@ -450,19 +483,42 @@ thead {
     z-index: 1;
     border-radius: 50%;
     outline: solid var(--text-color);
-    filter: drop-shadow(4px 0px 10px black);
+    filter: drop-shadow(4px 0px 10px #160d08);
   }
   .about-message {
     font-size: smaller;
   }
+  button,
+  .button {
+    scale: 0.9;
+  }
   .animated-logo {
-    margin: 2% auto 15vh auto !important;
+    width: 200px;
+    height: 200px;
+    margin: 0 4% 100px 0;
+  }
+  .ticker-container {
+    margin: 4%;
+  }
+  .ticker-container div.slide {
+    scale: 0.9;
+  }
+
+  .ticker-container .ticker-tape {
+    width: auto !important;
+  }
+  .ticker-container .ticker-tape:before,
+  .ticker-container .ticker-tape:after {
+    width: 150px !important;
   }
 }
 
 @media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
     grid-template-columns: 1fr 1fr;
+  }
+  .animated-logo {
+    margin: 0 4% 100px 0;
   }
 }
 
@@ -515,27 +571,32 @@ thead {
   }
 }
 
-.b {
-  animation: 7s color-change infinite alternate linear;
-}
-
-@keyframes name-move {
+@keyframes rotate {
   from {
-    transform: translate(0, 50px);
+    transform: rotate(-360deg);
   }
-
   to {
-    transform: translate(125px, 50px);
+    transform: rotate(360deg);
   }
 }
 
-.d {
-  animation: 20s name-move infinite alternate linear;
+.cls-5 {
+  animation: 5s color-change infinite alternate linear;
+  filter: drop-shadow(-2px 2px 4px #160d08);
 }
 
-.animated-logo {
-  width: 275px;
-  margin: 2%;
+#msdi {
+  animation: 30s rotate infinite linear;
+  transform-origin: 46% 48%;
+  filter: drop-shadow(1px 1px 3px #160d08);
+}
+
+.cls-1 {
+  filter: drop-shadow(2px 2px 2px #160d08);
+}
+
+.cls-3 {
+  filter: drop-shadow(2px 2px 5px #160d08);
 }
 
 .contact {
@@ -553,7 +614,7 @@ thead {
   padding: 3%;
   margin: 5%;
   border-radius: 5px;
-  filter: drop-shadow(3px 3px 8px black);
+  filter: drop-shadow(3px 3px 8px #160d08);
 }
 
 .contact-form {
@@ -561,7 +622,7 @@ thead {
   padding: 3% 7% 5% 7%;
   margin: 5%;
   border-radius: 5px;
-  filter: drop-shadow(3px 3px 8px black);
+  filter: drop-shadow(3px 3px 8px #160d08);
 }
 
 th {
@@ -599,7 +660,7 @@ label {
   width: 95%;
   margin: 2% auto;
   padding: 3%;
-  filter: drop-shadow(4px 4px 4px black);
+  filter: drop-shadow(4px 4px 4px #160d08);
 }
 
 .technologies path {
@@ -620,7 +681,7 @@ label {
 }
 
 .item-description {
-  filter: drop-shadow(1px 1px 2px black);
+  filter: drop-shadow(1px 1px 2px #160d08);
 }
 
 .link-container {
@@ -629,7 +690,7 @@ label {
   margin: auto;
   margin: 2% auto 0 auto;
   padding: 2%;
-  filter: drop-shadow(4px 4px 4px black);
+  filter: drop-shadow(4px 4px 4px #160d08);
 }
 
 .contact-type {
@@ -652,4 +713,78 @@ label {
   width: fit-content;
   margin: auto;
   text-align: left;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.slide {
+  filter: drop-shadow(2px 2px 6px #160d08);
+}
+
+.ticker-container .ticker-tape {
+  padding: 5%;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: fit-content;
+}
+
+.ticker-container .ticker-tape:before,
+.ticker-container .ticker-tape:after {
+  background: linear-gradient(
+    to right,
+    var(--dark-grey) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+
+.ticker-container .ticker-tape:after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.ticker-container .ticker-tape:before {
+  left: 0;
+  top: 0;
+}
+
+.ticker-container .slide-track {
+  -webkit-animation: scroll 60s linear infinite;
+  animation: scroll 60s linear infinite;
+  display: flex;
+  width: 360px;
+}
+
+.ticker-container div.slide {
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-3600px);
+  }
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-3600px);
+  }
 }
